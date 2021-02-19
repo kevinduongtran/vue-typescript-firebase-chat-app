@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div class="container">
+      <banner />
+      <!-- <chat/> -->
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue } from "vue-property-decorator";
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import HelloWorld from "./components/HelloWorld.vue";
+import Banner from "./components/Banner.vue";
+import Chat from "./components/Chat.vue";
+
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
 
 @Component({
   components: {
     HelloWorld,
+    Banner,
+    Chat,
   },
 })
 export default class App extends Vue {}
@@ -24,6 +36,5 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
